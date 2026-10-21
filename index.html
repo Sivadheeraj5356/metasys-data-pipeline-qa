@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Metasys Pipeline QA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="hero">
+    <section class="panel intro">
+      <p class="eyebrow">Metasys data engineering workflow</p>
+      <h1>Pipeline record QA</h1>
+      <p class="lede">Validate order records before ingestion, cleaning and warehouse loading. Catch missing keys, duplicate orders, invalid amounts and timestamp issues early.</p>
+      <div class="badges"><span>Schema checks</span><span>Business keys</span><span>Quarantine routing</span></div>
+    </section>
+    <section class="panel workspace">
+      <label for="recordInput">Source records</label>
+      <textarea id="recordInput" spellcheck="false" placeholder='order_id,customer_id,amount,updated_at\nORD-1001,C-44,129.50,2026-10-21T08:00:00Z\nORD-1001,C-44,-1,not-a-date'></textarea>
+      <div class="actions"><button id="auditButton" type="button">Validate records</button></div>
+      <section id="results" class="results" aria-live="polite"><p class="empty-state">Paste order records to validate the pipeline.</p></section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
